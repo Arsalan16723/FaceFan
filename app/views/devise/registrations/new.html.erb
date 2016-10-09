@@ -1,0 +1,157 @@
+<style type="text/css">
+  .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: white;
+}
+.main a {
+  color: blue;
+  text-decoration: none;
+}
+
+#attribution {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 12px;
+  color: grey;
+}
+
+div#signup-form {
+  position: relative;
+  margin-top: 10px;
+  height: 550px;
+  width: 400px;
+  box-shadow: 0 15px 20px -6px #777;
+  border-radius: 3px;
+  overflow: hidden;
+}
+div#signup-form .content {
+  overflow: auto;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 0, 102, 0.8);
+  z-index: 999;
+  padding-top: 30px;
+}
+
+#signin-opts {
+  width: 80%;
+  padding-top: 25px;
+  padding-bottom: 35px;
+  font-size: 1.5rem;
+}
+#signin-opts ul {
+  list-style-type: none;
+}
+#signin-opts li {
+  display: inline;
+  padding: 0 5px 0 5px;
+}
+#signin-opts li:first-child {
+  padding-left: 0;
+}
+#signin-opts li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+#signin-opts li a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+#signin-opts li a.active {
+  color: white;
+  border-bottom: 2px solid #1b66ea;
+}
+
+#signin-form {
+  width: 80%;
+  margin: auto;
+}
+#signin-form label,
+#signin-form input[type=text],
+#signin-form input[type=password],
+#signin-form button {
+  display: block;
+}
+#signin-form label.inline {
+  display: inline;
+}
+#signin-form label {
+  text-transform: uppercase;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  padding-bottom: 10px;
+}
+#signin-form input[type=email],
+#signin-form input[type=text],
+#signin-form input[type=password] {
+  width: 100%;
+  height: 35px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  color: white;
+  font-size: 13px;
+}
+#signin-form input[type=email]:focus,
+#signin-form input[type=text]:focus,
+#signin-form input[type=password]:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#signin-form .button {
+  margin: 10px 0 30px 0;
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  background-color: #1b66ea;
+  color: white;
+  height: 35px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#signin-form .button:focus, #signin-form .button:hover {
+  background-color: rgba(27, 102, 234, 0.8);
+  cursor: pointer;
+}
+
+div#bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 600px;
+  width: 400px;
+  z-index: 0;
+}
+
+</style>
+<div class="main">
+  <div id="signup-form">
+    <div id="bg-img"><img src="https://unsplash.it/400/600?image=973"/></div>
+    <div class="content">
+      <div id="signin-form">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
+          <label>Username</label>
+          <%= f.input :user_name, required: true, label: false, placeholder: 'User Name'%>
+          <label>Email</label>
+          <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
+          <label>Password</label>
+          <%= f.input :password,  required: true, label: false, placeholder: 'Confirm Password'%>
+          <label>Password Confirmation</label>
+          <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Confirm Password'%>
+          <%= f.button :submit, "Sign up", class: 'button'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
