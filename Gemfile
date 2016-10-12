@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,6 +28,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'kaminari', '~> 0.16.3'
 gem 'jquery-turbolinks'
+gem 'acts_as_votable', '~> 0.10.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

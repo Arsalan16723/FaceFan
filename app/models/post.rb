@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base 
+	acts_as_votable
   paginates_per 1
   validates :image, presence: true
   validates :user_id, presence: true 
